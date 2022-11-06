@@ -1,30 +1,16 @@
-import com.google.gson.Gson;
-
-import java.io.*;
-import java.net.ServerSocket;
+import java.io.File;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        try (var serverSocket = new ServerSocket(8989)) {
+        try {
             var engine = new BooleanSearchEngine(new File("pdfs"));
-            Gson gson = new Gson();
-
-            System.out.println("Server started....");
-
-            while (true) {
-                try (var clientSocket = serverSocket.accept();
-                     var out = new PrintWriter(clientSocket.getOutputStream(), true);
-                     var in = new BufferedReader(
-                             new InputStreamReader(clientSocket.getInputStream()))) {
-
-                    var words = in.readLine();
-                    var result = engine.search(words);
-                    var response = gson.toJson(result);
-                    out.println(response);
-                }
-            }
+            var server = new Server(8989, engine);
+            server.start();
         } catch (IOException e) {
+            System.out.println("Ошибка создания движка поиска.");
             e.printStackTrace();
         }
+
     }
 }
