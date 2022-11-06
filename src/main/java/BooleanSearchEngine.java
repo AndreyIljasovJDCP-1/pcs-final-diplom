@@ -14,7 +14,7 @@ import java.util.*;
  * <p>Поля: <b>wordsMap</b> - карта возможных результатов поиска
  */
 public class BooleanSearchEngine implements SearchEngine {
-    Map<String, List<PageEntry>> wordsMap;
+    private final Map<String, List<PageEntry>> wordsMap;
 
     /**
      * Конструктор - создание поискового движка(индексация).
