@@ -17,8 +17,8 @@ public class Main {
                      var in = new BufferedReader(
                              new InputStreamReader(clientSocket.getInputStream()))) {
 
-                    var word = in.readLine();
-                    var result = engine.search(word);
+                    var words = in.readLine();
+                    var result = engine.search(words);
                     var response = gson.toJson(result);
                     out.println(response);
                 }
