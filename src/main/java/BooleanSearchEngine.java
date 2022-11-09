@@ -22,13 +22,12 @@ public class BooleanSearchEngine implements SearchEngine {
      *
      * @param pdfsDir директория индексируемых файлов
      * @throws IOException      if I/O error occurs
-     * @throws RuntimeException if denoted directory's empty or not exists
      */
     public BooleanSearchEngine(File pdfsDir) throws IOException {
         var fileList = pdfsDir.listFiles();
         if (fileList == null || fileList.length == 0) {
-            throw new RuntimeException(pdfsDir
-                    + ": директория индексируемых файлов пуста или не существует.");
+            throw new IOException(pdfsDir
+                    + "/ - директория индексируемых файлов пуста или не существует.");
         }
 
         wordsMap = new HashMap<>();
