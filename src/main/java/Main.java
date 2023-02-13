@@ -8,8 +8,9 @@ public class Main {
             var server = new Server(8085, engine);
             server.start();
         } catch (IOException e) {
-            System.out.println("Ошибка создания движка поиска:");
+            System.out.println("Ошибка создания движка поиска.");
             e.printStackTrace();
         }
+
     }
 }
