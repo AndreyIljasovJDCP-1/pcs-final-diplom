@@ -1,5 +1,6 @@
-![logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAyQOmNXp5T6Sl_8Dvk-RmYDDd3PZ-AsppRx0CKviv-Xdgfzvj3H85lf47chaoxrkjZX4&usqp=CAU)
 # Дипломная работа «Поисковая система».
+
+![logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAyQOmNXp5T6Sl_8Dvk-RmYDDd3PZ-AsppRx0CKviv-Xdgfzvj3H85lf47chaoxrkjZX4&usqp=CAU)
 
 ### **Задача:**  
 - разработать класс поискового движка, который способен быстро находить указанное слово среди **pdf-файлов**, причём ранжировать результаты по количеству вхождений.  
